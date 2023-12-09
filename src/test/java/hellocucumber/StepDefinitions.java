@@ -28,20 +28,6 @@ public class StepDefinitions{
         startChromeDriver();
     }
 
-    /*
-    @When("The user put the user name and password")
-    public void theUserPutTheUserNameAndPassword() {
-        WebElement inputUserName = driver.findElement(By.xpath("//input[@data-test='username']"));
-        inputUserName.sendKeys("standard_user");
-        WebElement inputPassword = driver.findElement(By.xpath("//input[@data-test='password']"));
-        inputPassword.sendKeys("secret_sauce");
-        WebElement logginButton = driver.findElement(By.xpath("//input[@id='login-button']"));
-        logginButton.click();
-        Wait<WebDriver> wait = new WebDriverWait(driver, 2);
-        wait.until(ExpectedConditions.visibilityOf(inputUserName));
-    }
-    */
-
     @When("The user put the user name and password")
     public void theUserPutTheUserNameAndPassword() {
         homePage = new HomePage(driver);
