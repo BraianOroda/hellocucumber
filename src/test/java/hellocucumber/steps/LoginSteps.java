@@ -1,5 +1,6 @@
-package hellocucumber;
+package hellocucumber.steps;
 
+import hellocucumber.pageobject.InventoryPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
@@ -8,13 +9,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import pageobject.HomePage;
+import hellocucumber.pageobject.LoginPage;
 
 import java.util.List;
 
-public class StepDefinitions{
+public class LoginSteps {
     WebDriver driver = null;
-    HomePage homePage;
+    LoginPage loginPage;
+    InventoryPage inventoryPage;
 
     public void startChromeDriver() {
         System.setProperty("webdriver.chrome.driver","src/driver/chromedriver.exe");
@@ -30,18 +32,9 @@ public class StepDefinitions{
 
     @When("The user put the user name and password")
     public void theUserPutTheUserNameAndPassword() {
-        homePage = new HomePage(driver);
-        homePage.loginUser();
+        loginPage = new LoginPage(driver);
+        loginPage.loginUser();
     }
 
-    @Then("The user will see the items")
-    public void theUserWillSeeTheItems() {
-        List<WebElement> listaItems = driver.findElements(By.xpath("//div[@class='inventory_item']"));
-        assert listaItems.size() > 0;
-    }
 
-    @And("The user do logout")
-    public void theUserDoLogout() {
-        driver.quit();
-    }
 }

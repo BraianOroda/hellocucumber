@@ -1,16 +1,16 @@
-package pageobject;
+package hellocucumber.pageobject;
 
-import constants.HomeContants;
+import hellocucumber.constants.LoginContants;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class HomePage {
+public class LoginPage {
     WebDriver driver;
-    By inputUserName = By.xpath(HomeContants.INPUT_USER_NAME);
-    By inputPassword = By.xpath(HomeContants.INPUT_PASSWORD);
-    By logginButton  = By.xpath(HomeContants.LOGGIN_BUTTOM);
+    By inputUserName = By.xpath(LoginContants.INPUT_USER_NAME);
+    By inputPassword = By.xpath(LoginContants.INPUT_PASSWORD);
+    By logginButton  = By.xpath(LoginContants.LOGGIN_BUTTOM);
 
-    public HomePage(WebDriver driver) {
+    public LoginPage(WebDriver driver) {
         this.driver = driver;
     }
     public void loginUser() {
