@@ -10,6 +10,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 
+import static hellocucumber.steps.CucumberHooks.getDriver;
+
 public class InventoryPage {
     WebDriver driver;
     By listItems = By.xpath(InventoryConstants.LIST_ITEMS);
@@ -22,12 +24,14 @@ public class InventoryPage {
 
     public void getItems() {
         List<WebElement> listaItems = driver.findElements(listItems);
-        //assert listaItems.size() > 0;
+        assert listaItems.size() > 0;
         System.out.println("La cantidad de items obtenida es: " + listaItems.size());
     }
 
-    public void logOut() {
+    public void logOut() throws InterruptedException {
         driver.findElement(burgerMenu).click();
+        WebDriverWait wait = new WebDriverWait(getDriver(), 10);
+        wait.until(ExpectedConditions.elementToBeClickable(logoutLink));
         driver.findElement(logoutLink).click();
     }
 }
