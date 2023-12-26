@@ -28,7 +28,7 @@ public class InventoryPage {
         System.out.println("La cantidad de items obtenida es: " + listaItems.size());
     }
 
-    public void logOut() throws InterruptedException {
+    public void logOut(){
         driver.findElement(burgerMenu).click();
         WebDriverWait wait = new WebDriverWait(getDriver(), 10);
         wait.until(ExpectedConditions.elementToBeClickable(logoutLink));

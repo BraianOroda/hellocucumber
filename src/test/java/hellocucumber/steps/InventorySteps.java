@@ -13,7 +13,7 @@ public class InventorySteps {
         inventoryPage.getItems();
     }
     @And("The user do logout")
-    public void theUserDoLogout() throws InterruptedException {
+    public void theUserDoLogout(){
         inventoryPage.logOut();
     }
 }
