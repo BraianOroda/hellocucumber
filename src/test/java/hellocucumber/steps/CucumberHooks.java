@@ -7,7 +7,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class CucumberHooks {
-    public WebDriver driver;
     public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<>();
     @Before
     public void startChromeDriver() {
