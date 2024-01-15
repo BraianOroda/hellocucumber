@@ -14,9 +14,9 @@ public class LoginPage {
     public LoginPage(WebDriver driver) {
         this.driver = driver;
     }
-    public void loginUser() {
-        driver.findElement(inputUserName).sendKeys("standard_user");
-        driver.findElement(inputPassword).sendKeys("secret_sauce");
+    public void loginUser(String username, String password) {
+        driver.findElement(inputUserName).sendKeys(username);
+        driver.findElement(inputPassword).sendKeys(password );
         driver.findElement(logginButton).click();
     }
 }

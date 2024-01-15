@@ -15,11 +15,11 @@ public class CucumberHooks {
         getDriver().manage().window().maximize();
         getDriver().get("https://www.saucedemo.com/v1/");
     }
+    public static synchronized WebDriver getDriver() {
+        return tlDriver.get();
+    }
     @After
     public void closeBrowser(){
         getDriver().quit();
-    }
-    public static synchronized WebDriver getDriver() {
-        return tlDriver.get();
     }
 }

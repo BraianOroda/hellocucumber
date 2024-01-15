@@ -8,9 +8,10 @@ import org.openqa.selenium.WebDriver;
 public class InventorySteps {
     WebDriver driver = CucumberHooks.getDriver();
     InventoryPage inventoryPage = new InventoryPage(driver);
-     @Then("The user will see the items")
-    public void theUserWillSeeTheItems() {
-        inventoryPage.getItems();
+     @Then("^The user will see screen for the (.*)")
+    public void theUserWillSeeTheItems(String username) {
+         inventoryPage.validateScrenUsername(username);
+
     }
     @And("The user do logout")
     public void theUserDoLogout(){

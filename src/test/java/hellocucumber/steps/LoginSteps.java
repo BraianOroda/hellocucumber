@@ -7,8 +7,8 @@ import hellocucumber.pageobject.LoginPage;
 public class LoginSteps {
     WebDriver driver = CucumberHooks.getDriver();
     LoginPage loginPage = new LoginPage(driver);
-    @When("The user put the user name and password")
-    public void theUserPutTheUserNameAndPassword() {
-        loginPage.loginUser();
+    @When("^The user write the username (.*) and the password (.*)$")
+    public void theUserPutTheUserNameAndPassword(String username, String password) {
+        loginPage.loginUser(username, password);
     }
 }
