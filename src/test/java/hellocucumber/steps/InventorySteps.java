@@ -17,4 +17,14 @@ public class InventorySteps {
     public void theUserDoLogout(){
         inventoryPage.logOut();
     }
+
+    @And("^The user select the product (.*)$")
+    public void theUserSelectTheProductPRODUCT(String product) {
+        inventoryPage.selectProduct(product);
+    }
+
+    @And("The user do click on shopping cart")
+    public void theUserDoClickOnShoppingCart() {
+        inventoryPage.selectShoppingCart();
+    }
 }
