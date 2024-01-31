@@ -1,5 +1,6 @@
 Feature: Everybody wants to bay anything on SwagLabs
 
+  @inventory
   Scenario: Inventory - Buy All Products
     Given The user write the username standard_user and the password secret_sauce
     And   The user will see screen for the standard_user

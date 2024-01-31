@@ -10,7 +10,7 @@ public class CucumberHooks {
     public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<>();
     @Before
     public void startChromeDriver() {
-        System.setProperty("webdriver.chrome.driver","src/driver/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","driver/chromedriver.exe");
         tlDriver.set(new ChromeDriver());
         getDriver().manage().window().maximize();
         getDriver().get("https://www.saucedemo.com/v1/");
