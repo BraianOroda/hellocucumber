@@ -98,7 +98,7 @@
         <profile>
             <id>qa</id>
             <properties>
-                <cucumber.filter.tags>@inventory</cucumber.filter.tags>
+                <cucumber.filter.tags>@regression</cucumber.filter.tags>
             </properties>
         </profile>
     </profiles>
