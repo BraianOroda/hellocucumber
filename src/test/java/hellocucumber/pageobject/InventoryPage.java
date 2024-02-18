@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 import java.util.List;
 import org.junit.jupiter.api.Assertions;
 
@@ -43,13 +45,15 @@ public class InventoryPage {
 
     public void logOut(){
         driver.findElement(burgerMenu).click();
-        WebDriverWait wait = new WebDriverWait(getDriver(), 10);
+//        WebDriverWait wait = new WebDriverWait(getDriver(), 10);
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(logoutLink));
         driver.findElement(logoutLink).click();
     }
 
     public void selectProduct(String product) {
-        WebDriverWait wait = new WebDriverWait(getDriver(), 10);
+//        WebDriverWait wait = new WebDriverWait(getDriver(), 10);
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(shopping_cart));
         List<WebElement> item_list = driver.findElements(list_inventory_items);
         for (WebElement item : item_list) {
@@ -64,7 +68,8 @@ public class InventoryPage {
 
     public void selectShoppingCart() {
         driver.findElement(shopping_cart).click();
-        WebDriverWait wait = new WebDriverWait(getDriver(), 10);
+//        WebDriverWait wait = new WebDriverWait(getDriver(), 10);
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
         wait.until(ExpectedConditions.urlContains("cart"));
     }
 }
